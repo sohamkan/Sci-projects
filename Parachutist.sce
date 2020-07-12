@@ -1,0 +1,19 @@
+x=[1 2 3 4 5 6 7 8 9 10 11]
+y=[2.173 2.093 2 2.193 1.89 1.861 1.84 1.826 1.81 1.78 1.76]
+n=length(y)
+a=sum(x)
+b=sum(x^2)
+c=sum(x^3)
+d=sum(x^4)
+e=sum(y)
+f=sum(y.*x)
+g=sum(y.*x^2)
+A=[ n a b; a b c; b c d ]
+B=[ e; f; g]
+X=A\B
+P2=X(1,1)
+P1=X(2,1)
+P0=X(3,1)
+Z=(P0*(X^2))+(P1*X)+(P2)
+Z=linspace(1,3,11);
+plot(x,Z,'*')
